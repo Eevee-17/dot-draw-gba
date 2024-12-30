@@ -13,7 +13,7 @@ COLWHITE
 @dcw WHITE, WHITE
 
 
-start
+start:
 ldr r0,=0x04000000 ; I/O
 
 ldr r1,=%0000010000000011 ; turn on BG2, set BG mode to 3
@@ -29,13 +29,13 @@ ldr r2,[COLBLACK] ; initial dot color
 ldr r3,=240 ; initial x-pos represented by x = x-pos px * 2
 ldr r4,=38400 ; initial y-pos represented by y = y-pos px * 240 * 2
 
-clearScreen
+clearScreen:
 ldr r5,=(0x85000000|19200) ; 0x85000000 (check binary): enable DMA, set 32-bit transfer type, and set as fixed source. 19200: 240px * 160px / 2
 str r5,[r0,0xDC] ; DMA 3 control
 
 b drawDot
 
-mainLoop
+mainLoop:
 ; wait for VBlank
 waitVBEnd
 ldrh r5,[r0,0x06] ; V counter
@@ -75,7 +75,7 @@ ldreq r2,[COLWHITE]
 tst r5,0x02 ; test for B pressed
 beq clearScreen
 
-drawDot ; note: the formula for the position in VRAM to draw a point is y * 240 + x
+drawDot: ; note: the formula for the position in VRAM to draw a point is y * 240 + x
 add r5,r3,r4
 strh r2,[r1,r5]
 b mainLoop
