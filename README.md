@@ -8,3 +8,5 @@ Assembled with [Goldroad 1.7](https://www.gbadev.org/tools.php?showinfo=192): `g
 - D-Pad: move the dot
 - A: erase
 - B: clear screen
+
+I'm sure there are ways this can be optimized more, but I'm proud of where it is for now.
