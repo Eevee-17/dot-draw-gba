@@ -63,12 +63,12 @@ cmp r3,r6
 tstle r5,0x10 ; test for D-pad Right pressed
 addeq r3,r3,#2 ; 2 = 1px * 2
 
-tst r5,0x01 ; test for A pressed
-mov r2,0x0000 ; set r2 to the color black
-ldreq r2,[COLWHITE]
-
 tst r5,0x02 ; test for B pressed
 beq clearScreen
+
+tst r5,0x01 ; test for A pressed
+mov r2,0x0000 ; set r2 to the color black
+beq mainLoop
 
 drawDot: ; note: the formula for the position in VRAM to draw a point is y * 240 + x
 add r5,r3,r4
