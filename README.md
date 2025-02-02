@@ -6,7 +6,7 @@ Assembled with [Goldroad 1.7](https://www.gbadev.org/tools.php?showinfo=192): `g
 
 ### Controls:
 - D-Pad: move the dot
-- A: erase
+- A: don't draw
 - B: clear screen
 
 I'm sure there are ways this can be optimized more, but I'm proud of where it is for now.
