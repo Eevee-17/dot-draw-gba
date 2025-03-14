@@ -2,7 +2,7 @@
 
 
 b start
-@include header.h
+@include header.asm
 
 COLWHITE:
 @dcw WHITE, WHITE
