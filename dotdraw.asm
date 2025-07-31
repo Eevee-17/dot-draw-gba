@@ -69,7 +69,7 @@ beq clearScreen
 tst r5,0x01 ; test for A pressed
 beq mainLoop
 
-drawDot: ; note: the formula for the position in VRAM to draw a point is y * 240 + x
+drawDot: ; note: the formula for the position in VRAM to draw a point is y * 480 + x (or y * 240 * 2 + x)
 add r5,r3,r4
 strh r2,[r1,r5]
 b mainLoop
